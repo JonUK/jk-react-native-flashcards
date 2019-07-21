@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { white } from '../utils/colors';
+import { white, bgBlue } from '../utils/colors';
 import { robotoMedium, robotoRegular } from '../utils/fonts';
 
 export default function HomeHeader() {
@@ -13,7 +13,7 @@ export default function HomeHeader() {
       <View styles={styles.headerTextContainer}>
         <Text style={styles.headerText}>Mobile</Text>
         <Text style={styles.headerText}>Flashcards</Text>
-        <Text style={styles.headerTagline}>The fun way to prepare for your test</Text>
+        <Text style={styles.headerTagline}>The fun way to prepare for tests</Text>
       </View>
 
     </View>
@@ -26,9 +26,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 130,
-    margin: 16,
     borderRadius: 10,
-    backgroundColor: '#0090FF'
+    backgroundColor: bgBlue
   },
   headerTextContainer: {
     flexDirection: 'column', // Swap from row back to the default of column
@@ -44,6 +43,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: white,
     fontFamily: robotoRegular,
-    fontSize: 12
+    fontSize: 13
   }
 });
