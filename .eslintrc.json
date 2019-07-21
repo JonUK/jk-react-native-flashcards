@@ -16,7 +16,8 @@
   "rules": {
     "semi": ["error" , "always" ],
     "quotes": ["error", "single"],
-    "no-duplicate-imports": "error"
+    "no-duplicate-imports": "error",
+    "comma-dangle": ["error", "never"]
   }
 
 }
