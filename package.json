@@ -9,13 +9,19 @@
   },
   "dependencies": {
     "expo": "^33.0.0",
+    "expo-constants": "^5.0.1",
+    "expo-font": "^5.0.1",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-web": "^0.11.4"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.1.1"
+    "babel-eslint": "^10.0.2",
+    "babel-preset-expo": "^5.1.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-native": "^3.7.0"
   },
   "private": true
 }
