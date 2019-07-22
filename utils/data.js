@@ -1,5 +1,6 @@
 const data = {
   React: {
+    id: 'React',
     title: 'React',
     created: '2019-07-21',
     questions: [
@@ -14,6 +15,7 @@ const data = {
     ]
   },
   JavaScript: {
+    id: 'JavaScript',
     title: 'JavaScript',
     created: '2019-07-20',
     questions: [
@@ -24,11 +26,13 @@ const data = {
     ]
   },
   Redux: {
+    id: 'Redux',
     title: 'Redux',
     created: '2019-07-19',
     questions: []
   },
   Knockout: {
+    id: 'Knockout',
     title: 'Knockout',
     created: '2019-07-18',
     questions: []

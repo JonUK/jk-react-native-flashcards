@@ -1,46 +1,59 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { bgGreen, white } from '../utils/colors';
 import { robotoMedium, robotoRegular } from '../utils/fonts';
+import NavigationService from '../services/navigationService';
 
-export default function DeckCard(props) {
+class DeckCard extends Component {
 
-  const { deck } = props;
-  const cardCount = deck.questions.length;
+  render() {
 
-  return (
+    const { deck, allowNavigation } = this.props;
+    const cardCount = deck.questions.length;
 
-    <View style={styles.container}>
+    return (
 
-      <View style={styles.contentContainer}>
-        <Text style={styles.title}>{ deck.title }</Text>
-        <Text style={styles.createdText}>Created: { deck.created }</Text>
+      <TouchableOpacity
+        disabled={!allowNavigation}
+        onPress={() => {
+          NavigationService.navigate('Deck', {
+            deckId: deck.id
+          });
+        }}
+        style={styles.container}>
 
-        <View style={styles.countContainer}>
-          <Text style={styles.countText}>{ cardCount }</Text>
+        <View style={styles.contentContainer}>
+          <Text style={styles.title}>{deck.title}</Text>
+          <Text style={styles.createdText}>Created: {deck.created}</Text>
 
-          {cardCount === 1
-            ? <Text style={styles.countLabel}>card</Text>
-            : <Text style={styles.countLabel}>cards</Text>
-          }
+          <View style={styles.countContainer}>
+            <Text style={styles.countText}>{cardCount}</Text>
+
+            {cardCount === 1
+              ? <Text style={styles.countLabel}>card</Text>
+              : <Text style={styles.countLabel}>cards</Text>
+            }
+          </View>
         </View>
-      </View>
 
-      <FontAwesome
-        name="chevron-right"
-        style={styles.rightArrow}
-        size={18}
-      />
+        {allowNavigation && (
+          <FontAwesome
+            name="chevron-right"
+            style={styles.rightArrow}
+            size={18}
+          />
+        )}
 
-    </View>
-
-  );
+      </TouchableOpacity>
+    );
+  }
 }
 
 DeckCard.propTypes = {
-  deck: PropTypes.object.isRequired
+  deck: PropTypes.object.isRequired,
+  allowNavigation: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
@@ -74,7 +87,7 @@ const styles = StyleSheet.create({
   countText: {
     fontSize: 28,
     fontFamily: robotoMedium,
-    color: white,
+    color: white
   },
   countLabel: {
     marginLeft: 5,
@@ -87,3 +100,5 @@ const styles = StyleSheet.create({
     color: white
   }
 });
+
+export default DeckCard;

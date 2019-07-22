@@ -18,7 +18,7 @@ export default function Decks() {
         const deck = dummyData[key];
 
         return (
-          <DeckCard deck={deck} key={key} />
+          <DeckCard deck={deck} allowNavigation={true} key={key} />
         );
       })}
 

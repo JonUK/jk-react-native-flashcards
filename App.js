@@ -3,8 +3,9 @@ import { StyleSheet, View, StatusBar } from 'react-native';
 import Constants from 'expo-constants';
 import * as Font from 'expo-font';
 import { robotoMedium, robotoRegular } from './utils/fonts';
+import NavigationService from './services/navigationService';
 
-import TabNavigation from './components/TabNavigation';
+import StackNavigation from './components/StackNavigation';
 
 function CustomStatusBar({...props}) {
   return (
@@ -35,7 +36,9 @@ export default class App extends Component {
         <CustomStatusBar />
 
         {this.state.fontsLoaded && (
-          <TabNavigation />
+          <StackNavigation ref={navigatorRef => {
+            NavigationService.setTopLevelNavigator(navigatorRef);
+          }} />
         )}
 
       </View>
