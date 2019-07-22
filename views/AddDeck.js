@@ -1,22 +1,29 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import globalStyles from '../utils/globalStyles';
-import { bgBlue, textColor, white } from '../utils/colors';
+import { textColor } from '../utils/colors';
 import { robotoMedium, robotoRegular } from '../utils/fonts';
+import CustomStatusBar from '../components/CustomStatusBar';
 
 export default function AddDeck() {
 
   return (
-    <View style={globalStyles.viewContainer}>
-      <Text style={globalStyles.title}>Add Deck</Text>
-      <Text style={styles.tagline}>Create a new deck of flashcards</Text>
+    <View style={{flex: 1}}>
 
-      <Text style={styles.label}>Title</Text>
-      <TextInput style={styles.input} />
+      <CustomStatusBar />
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Create Deck</Text>
-      </TouchableOpacity>
+      <View style={globalStyles.viewContainer}>
+        <Text style={globalStyles.title}>Add Deck</Text>
+        <Text style={styles.tagline}>Create a new deck of flashcards</Text>
+
+        <Text style={styles.label}>Title</Text>
+        <TextInput style={styles.input} />
+
+        <TouchableOpacity style={globalStyles.btnPrimary}>
+          <Text style={globalStyles.btnPrimaryText}>Create Deck</Text>
+        </TouchableOpacity>
+
+      </View>
 
     </View>
   );
@@ -42,19 +49,5 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     fontSize: 16,
     fontFamily: robotoRegular
-  },
-  button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 32,
-    height: 50,
-    borderRadius: 10,
-    backgroundColor: bgBlue
-  },
-  buttonText: {
-    color: white,
-    fontSize: 14,
-    fontFamily: robotoMedium,
-    textTransform: 'uppercase'
   }
 });

@@ -1,19 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
-import Constants from 'expo-constants';
+import { StyleSheet, View } from 'react-native';
 import * as Font from 'expo-font';
 import { robotoMedium, robotoRegular } from './utils/fonts';
 import NavigationService from './services/navigationService';
 
 import StackNavigation from './components/StackNavigation';
-
-function CustomStatusBar({...props}) {
-  return (
-    <View style={{height: Constants.statusBarHeight}}>
-      <StatusBar translucent {...props} />
-    </View>
-  );
-}
 
 export default class App extends Component {
 
@@ -33,7 +24,6 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.appContainer}>
-        <CustomStatusBar />
 
         {this.state.fontsLoaded && (
           <StackNavigation ref={navigatorRef => {

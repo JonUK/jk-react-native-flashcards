@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { textColor } from './colors';
+import { bgBlue, textColor, white } from './colors';
 import { robotoMedium } from './fonts';
 
 const globalStyles = StyleSheet.create({
@@ -12,6 +12,35 @@ const globalStyles = StyleSheet.create({
     fontSize: 40,
     fontFamily: robotoMedium,
     color: textColor
+  },
+  btnPrimary: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 32,
+    height: 50,
+    borderRadius: 10,
+    backgroundColor: bgBlue
+  },
+  btnSecondary: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 32,
+    height: 50,
+    borderColor: bgBlue,
+    borderWidth: 1,
+    borderRadius: 10
+  },
+  btnPrimaryText: {
+    color: white,
+    fontSize: 14,
+    fontFamily: robotoMedium,
+    textTransform: 'uppercase'
+  },
+  btnSecondaryText: {
+    color: bgBlue,
+    fontSize: 14,
+    fontFamily: robotoMedium,
+    textTransform: 'uppercase'
   }
 });
 
