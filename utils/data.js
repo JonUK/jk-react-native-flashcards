@@ -22,7 +22,18 @@ const data = {
         answer: 'The combination of a function and the lexical environment within which that function was declared.'
       }
     ]
+  },
+  Redux: {
+    title: 'Redux',
+    created: '2019-07-19',
+    questions: []
+  },
+  Knockout: {
+    title: 'Knockout',
+    created: '2019-07-18',
+    questions: []
   }
+
 };
 
 export default data;

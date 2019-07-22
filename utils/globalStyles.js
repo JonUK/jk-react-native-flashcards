@@ -5,8 +5,7 @@ import { robotoMedium } from './fonts';
 const globalStyles = StyleSheet.create({
   viewContainer: {
     marginLeft: 16,
-    marginRight: 16,
-    marginBottom: 16
+    marginRight: 16
   },
   title: {
     marginTop: 16,

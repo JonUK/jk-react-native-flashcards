@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { white, bgBlue } from '../utils/colors';
+import { white, bgBlueLight } from '../utils/colors';
 import { robotoMedium, robotoRegular } from '../utils/fonts';
 
 export default function HomeHeader() {
@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 130,
     borderRadius: 10,
-    backgroundColor: bgBlue
+    backgroundColor: bgBlueLight
   },
   headerTextContainer: {
-    flexDirection: 'column', // Swap from row back to the default of column
+    flexDirection: 'column' // Swap from row back to the default of column
   },
   headerText: {
     textAlign: 'center',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 import globalStyles from '../utils/globalStyles';
 import dummyData from '../utils/data';
 
@@ -9,7 +9,7 @@ import DeckCard from '../components/DeckCard';
 export default function Decks() {
 
   return (
-    <View style={globalStyles.viewContainer}>
+    <ScrollView style={globalStyles.viewContainer}>
       <HomeHeader />
 
       <Text style={globalStyles.title}>Decks</Text>
@@ -22,6 +22,6 @@ export default function Decks() {
         );
       })}
 
-    </View>
+    </ScrollView>
   );
 }
