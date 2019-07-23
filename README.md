@@ -20,5 +20,5 @@ The app has been tested on the following devices
 
 ## Screenshots
 
-![Screenshots of Mobile Flashcards Project app](https://raw.githubusercontent.com/JonUK/jk-react-native-flashcards/master/designs/mobile-flashcards-udacity.png)
+![Screenshots of Mobile Flashcards Project app](https://raw.githubusercontent.com/JonUK/jk-react-native-flashcards/master/design/mobile-flashcards-udacity.png)
 
