@@ -12,7 +12,7 @@ export default function QuizHeader(props) {
       <View style={styles.headerTextContainer}>
         <Text style={styles.headerText}>Quiz Time!</Text>
         <Text style={styles.countText}>
-          { props.currentQuestionIndex + 1 } / { props.totalQuestionsCount }
+          { props.currentQuestionIndex + 1 } / { props.totalQuestions }
         </Text>
       </View>
 
@@ -26,7 +26,7 @@ export default function QuizHeader(props) {
 
 QuizHeader.propTypes = {
   currentQuestionIndex: PropTypes.number.isRequired,
-  totalQuestionsCount: PropTypes.number.isRequired
+  totalQuestions: PropTypes.number.isRequired
 };
 
 const styles = StyleSheet.create({

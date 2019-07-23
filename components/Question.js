@@ -11,8 +11,16 @@ class Question extends Component {
     showAnswerArea: false
   };
 
-  onShowAnswerPress = () => {
+  handleShowAnswerPress = () => {
     this.setState({ showAnswerArea: true });
+  };
+
+  handleQuestionAnswered = (answeredCorrectly) => {
+    const { onQuestionAnswered } = this.props;
+
+    this.setState({ showAnswerArea: false });
+
+    onQuestionAnswered(answeredCorrectly);
   };
 
   render() {
@@ -28,7 +36,7 @@ class Question extends Component {
         {!this.state.showAnswerArea && (
           <View>
             <TouchableOpacity
-              onPress={this.onShowAnswerPress}
+              onPress={this.handleShowAnswerPress}
               style={globalStyles.btnSecondary}>
               <Text style={globalStyles.btnSecondaryText}>Show Answer</Text>
             </TouchableOpacity>
@@ -47,6 +55,7 @@ class Question extends Component {
 
               <View style={{ flex: 1 }}>
                 <TouchableOpacity
+                  onPress={() => this.handleQuestionAnswered(true)}
                   style={styles.btnSuccess}>
                   <Text style={styles.btnSuccessText}>Correct</Text>
                 </TouchableOpacity>
@@ -54,6 +63,7 @@ class Question extends Component {
 
               <View style={{ flex: 1 }}>
                 <TouchableOpacity
+                  onPress={() => this.handleQuestionAnswered(false)}
                   style={styles.btnError}>
                   <Text style={styles.btnErrorText}>Incorrect</Text>
                 </TouchableOpacity>
@@ -69,7 +79,8 @@ class Question extends Component {
 }
 
 Question.propTypes = {
-  questionObject: PropTypes.object.isRequired
+  questionObject: PropTypes.object.isRequired,
+  onQuestionAnswered: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
