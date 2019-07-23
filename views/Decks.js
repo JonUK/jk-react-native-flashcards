@@ -12,7 +12,7 @@ class Decks extends Component {
 
   render() {
 
-    const { decks } = this.props;
+    const { decksArray } = this.props;
 
     return (
       <View style={{flex: 1}}>
@@ -24,13 +24,9 @@ class Decks extends Component {
 
           <Text style={globalStyles.title}>Decks</Text>
 
-          {Object.keys(decks).map(key => {
-            const deck = decks[key];
-
-            return (
-              <DeckCard deck={deck} allowNavigation={true} key={key} />
-            );
-          })}
+          {decksArray.map(deck => (
+              <DeckCard deck={deck} allowNavigation={true} key={deck.id} />
+          ))}
 
         </ScrollView>
       </View>
@@ -39,8 +35,13 @@ class Decks extends Component {
 }
 
 function mapStateToProps(decks) {
+
+  const decksArray = Object.keys(decks)
+    .map(key => decks[key])
+    .sort((a, b) => b.timestamp - a.timestamp);
+
   return {
-    decks
+    decksArray
   };
 }
 

@@ -31,7 +31,8 @@ const dummyData = {
   CapitalCities: {
     id: 'CapitalCities',
     title: 'Capital Cities',
-    created: '2019-07-23',
+    timestamp: 1563796800,
+    created: '2019-07-22',
     questions: [
       {
         question: 'What is the capital of China',
@@ -54,6 +55,7 @@ const dummyData = {
   React: {
     id: 'React',
     title: 'React',
+    timestamp: 1563710400,
     created: '2019-07-21',
     questions: [
       {

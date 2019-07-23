@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import globalStyles from '../utils/globalStyles';
 import { textColor } from '../utils/colors';
-import { robotoMedium, robotoRegular } from '../utils/fonts';
+import { robotoMedium } from '../utils/fonts';
 import CustomStatusBar from '../components/CustomStatusBar';
 import { addDeck } from '../actions';
 
@@ -102,11 +102,13 @@ function mapDispatchToProps(dispatch, { navigation }) {
     addDeck: (title) => {
 
       const deckId = title.replace(/\s/g, '');
+      const timestamp = Math.round(new Date() / 1000);
       const dateString = new Date().toISOString().split('T')[0];
 
       dispatch(addDeck({
         id: deckId,
         title: title,
+        timestamp: timestamp,
         created: dateString,
         questions: []
       }));
