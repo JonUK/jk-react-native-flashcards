@@ -6,7 +6,7 @@ import Decks from '../views/Decks';
 import Deck from '../views/Deck';
 import AddDeck from '../views/AddDeck';
 import AddCard from '../views/AddCard';
-
+import Quiz from '../views/Quiz';
 
 const StackNavigator = createStackNavigator({
   Primary: {
@@ -32,6 +32,9 @@ const StackNavigator = createStackNavigator({
   },
   AddCard: {
     screen: AddCard
+  },
+  Quiz: {
+    screen: Quiz
   }
 });
 

@@ -8,8 +8,9 @@ const DECKS_STORAGE_KEY = 'MobileFlashcards:Decks';
  */
 export async function fetchAllDecks() {
 
-  // TEMP: Always use dummy data
-  await AsyncStorage.clear();
+  // TEMP: Clear async storage so always using dummy data
+  const keys = await AsyncStorage.getAllKeys();
+  await  AsyncStorage.multiRemove(keys);
 
   // Get all the decks from AsyncStorage. If there aren't any then use the dummy data
   // as the default set of decks.
@@ -35,15 +36,15 @@ const dummyData = {
     created: '2019-07-22',
     questions: [
       {
-        question: 'What is the capital of China',
-        answer: 'Beijing'
-      },
-      {
-        question: 'What is the capital of Canada',
+        question: 'What is the capital of Canada?',
         answer: 'Ottawa'
       },
       {
-        question: 'What is the capital of Poland',
+        question: 'What is the capital of China?',
+        answer: 'Beijing'
+      },
+      {
+        question: 'What is the capital of Poland?',
         answer: 'Warsaw'
       },
       {

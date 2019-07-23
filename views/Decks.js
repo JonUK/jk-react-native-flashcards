@@ -22,7 +22,9 @@ class Decks extends Component {
         <ScrollView style={globalStyles.viewContainer}>
           <HomeHeader />
 
-          <Text style={globalStyles.title}>Decks</Text>
+          {decksArray.length === 1
+            ? <Text style={globalStyles.title}>1 Deck</Text>
+            : <Text style={globalStyles.title}>{ decksArray.length } Decks</Text>}
 
           {decksArray.map(deck => (
               <DeckCard deck={deck} allowNavigation={true} key={deck.id} />

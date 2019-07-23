@@ -8,6 +8,13 @@ import DeckCard from '../components/DeckCard';
 
 class Deck extends Component {
 
+  state = {
+    isPlayingQuiz: false,
+    currentQuestionIndex: 0,
+    questionsAnsweredCorrectly: 0,
+    questionsAnsweredIncorrectly: 0
+  };
+
   render() {
 
     const { deck } = this.props;
@@ -29,7 +36,13 @@ class Deck extends Component {
           <Text style={globalStyles.btnSecondaryText}>Add Card</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={globalStyles.btnPrimary}>
+        <TouchableOpacity
+          onPress={() => {
+            NavigationService.navigate('Quiz', {
+              deckId: deck.id
+            });
+          }}
+          style={globalStyles.btnPrimary}>
           <Text style={globalStyles.btnPrimaryText}>Start Quiz</Text>
         </TouchableOpacity>
 

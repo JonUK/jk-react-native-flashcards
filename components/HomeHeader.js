@@ -8,9 +8,9 @@ export default function HomeHeader() {
   return (
     <View style={styles.headerPanel}>
 
-      <Image source={require('../images/cards.png')} />
+      <Image source={require('../images/cards-happy.png')} />
 
-      <View styles={styles.headerTextContainer}>
+      <View style={styles.headerTextContainer}>
         <Text style={styles.headerText}>Mobile</Text>
         <Text style={styles.headerText}>Flashcards</Text>
         <Text style={styles.headerTagline}>The fun way to prepare for tests</Text>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: white,
     fontFamily: robotoMedium,
-    fontSize: 24
+    fontSize: 32
   },
   headerTagline: {
     textAlign: 'center',
