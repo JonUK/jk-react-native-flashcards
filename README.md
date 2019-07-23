@@ -12,7 +12,7 @@ To run the app, follow the steps below:
 
 
 ## Device Support
-The app has been tested on the following devices
+The app has been tested on the following devices:
 
  - iPhone 6
  - iOS Simulator

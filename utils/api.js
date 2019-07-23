@@ -9,8 +9,8 @@ const DECKS_STORAGE_KEY = 'MobileFlashcards:Decks';
 export async function fetchAllDecks() {
 
   // TEMP: Clear async storage so always using dummy data
-  const keys = await AsyncStorage.getAllKeys();
-  await  AsyncStorage.multiRemove(keys);
+  //const keys = await AsyncStorage.getAllKeys();
+  //await  AsyncStorage.multiRemove(keys);
 
   // Get all the decks from AsyncStorage. If there aren't any then use the dummy data
   // as the default set of decks.
