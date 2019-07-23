@@ -7,10 +7,10 @@ import middleware from './middleware';
 import { receiveDecks } from './actions/index';
 import * as Font from 'expo-font';
 import { robotoMedium, robotoRegular } from './utils/fonts';
-import NavigationService from './services/navigationService';
+import NavigationService from './navigation/navigationService';
 import { fetchAllDecks } from './utils/api';
 
-import StackNavigation from './components/StackNavigation';
+import StackNavigation from './navigation/StackNavigation';
 
 export default class App extends Component {
 

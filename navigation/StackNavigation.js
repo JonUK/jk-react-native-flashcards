@@ -5,6 +5,7 @@ import TabNavigation from './TabNavigation';
 import Decks from '../views/Decks';
 import Deck from '../views/Deck';
 import AddDeck from '../views/AddDeck';
+import AddCard from '../views/AddCard';
 
 
 const StackNavigator = createStackNavigator({
@@ -28,6 +29,9 @@ const StackNavigator = createStackNavigator({
   },
   AddDeck: {
     screen: AddDeck
+  },
+  AddCard: {
+    screen: AddCard
   }
 });
 

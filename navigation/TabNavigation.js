@@ -17,7 +17,7 @@ const TabNavigator = createBottomTabNavigator(
         tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name="cards-outline" size={30} color={tintColor} />
       }
     },
-    AddEntry: {
+    AddDeck: {
       screen: AddDeck,
       navigationOptions: {
         tabBarLabel: 'Add Deck',
