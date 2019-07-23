@@ -32,8 +32,8 @@ class DeckCard extends Component {
             <Text style={styles.countText}>{cardCount}</Text>
 
             {cardCount === 1
-              ? <Text style={styles.countLabel}>card</Text>
-              : <Text style={styles.countLabel}>cards</Text>
+              ? <Text style={styles.countLabel}>flashcard</Text>
+              : <Text style={styles.countLabel}>flashcards</Text>
             }
           </View>
         </View>

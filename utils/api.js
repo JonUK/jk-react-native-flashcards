@@ -8,6 +8,9 @@ const DECKS_STORAGE_KEY = 'MobileFlashcards:Decks';
  */
 export async function fetchAllDecks() {
 
+  // TEMP: Always use dummy data
+  await AsyncStorage.clear();
+
   // Get all the decks from AsyncStorage. If there aren't any then use the dummy data
   // as the default set of decks.
   let decksJson = await AsyncStorage.getItem(DECKS_STORAGE_KEY);
@@ -20,10 +23,34 @@ export async function fetchAllDecks() {
   }
 }
 
+
 // --------------------------------------------------------------------------------
 
 
 const dummyData = {
+  CapitalCities: {
+    id: 'CapitalCities',
+    title: 'Capital Cities',
+    created: '2019-07-23',
+    questions: [
+      {
+        question: 'What is the capital of China',
+        answer: 'Beijing'
+      },
+      {
+        question: 'What is the capital of Canada',
+        answer: 'Ottawa'
+      },
+      {
+        question: 'What is the capital of Poland',
+        answer: 'Warsaw'
+      },
+      {
+        question: 'What is the capital of Germany?',
+        answer: 'Berlin'
+      }
+    ]
+  },
   React: {
     id: 'React',
     title: 'React',
@@ -38,29 +65,6 @@ const dummyData = {
         answer: 'The componentDidMount lifecycle event'
       }
     ]
-  },
-  JavaScript: {
-    id: 'JavaScript',
-    title: 'JavaScript',
-    created: '2019-07-20',
-    questions: [
-      {
-        question: 'What is a closure?',
-        answer: 'The combination of a function and the lexical environment within which that function was declared.'
-      }
-    ]
-  },
-  Redux: {
-    id: 'Redux',
-    title: 'Redux',
-    created: '2019-07-19',
-    questions: []
-  },
-  Knockout: {
-    id: 'Knockout',
-    title: 'Knockout',
-    created: '2019-07-18',
-    questions: []
   }
 };
 

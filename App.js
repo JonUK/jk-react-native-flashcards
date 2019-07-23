@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
+import middleware from './middleware';
 import { receiveDecks } from './actions/index';
 import * as Font from 'expo-font';
 import { robotoMedium, robotoRegular } from './utils/fonts';
@@ -13,7 +14,7 @@ import StackNavigation from './components/StackNavigation';
 
 export default class App extends Component {
 
-  store = createStore(reducer);
+  store = createStore(reducer, middleware);
 
   state = {
     prerequisitesLoaded: false // Flags if the Roboto fonts and data have been loaded

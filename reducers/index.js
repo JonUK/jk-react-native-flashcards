@@ -10,7 +10,7 @@ function decks(state = {}, action) {
     case ADD_DECK:
       return {
         ...state,
-        ...action.deck
+        [action.deck.id]: action.deck
       };
     default:
       return state;
