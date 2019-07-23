@@ -1,6 +1,6 @@
 # Mobile Flashcards Project
 
-Jon Keeping's solution for the Mobile Flashcards Project.
+Jon Keeping's solution for the Mobile Flashcards Project as part of the Udacity React Nanodegree.
 The Mobile Flashcards app allows you to create decks of flashcards which you can use to study for tests. 
 
 ## How to run the app
@@ -25,4 +25,5 @@ The app has been tested on the following devices:
 
 ## Screen Recording
 Live recording of the Mobile Flashcards app being used.
+
 [https://youtu.be/pCFs0x3S3F8](https://youtu.be/pCFs0x3S3F8)
