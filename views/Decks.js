@@ -1,34 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Text, View, ScrollView } from 'react-native';
 import globalStyles from '../utils/globalStyles';
-import dummyData from '../utils/data';
 
 import CustomStatusBar from '../components/CustomStatusBar';
 import HomeHeader from '../components/HomeHeader';
 import DeckCard from '../components/DeckCard';
 
 
-export default function Decks() {
+class Decks extends Component {
 
-  return (
-    <View style={{flex: 1}}>
+  render() {
 
-      <CustomStatusBar />
+    const { decks } = this.props;
 
-      <ScrollView style={globalStyles.viewContainer}>
-        <HomeHeader />
+    return (
+      <View style={{flex: 1}}>
 
-        <Text style={globalStyles.title}>Decks</Text>
+        <CustomStatusBar />
 
-        {Object.keys(dummyData).map(key => {
-          const deck = dummyData[key];
+        <ScrollView style={globalStyles.viewContainer}>
+          <HomeHeader />
 
-          return (
-            <DeckCard deck={deck} allowNavigation={true} key={key} />
-          );
-        })}
+          <Text style={globalStyles.title}>Decks</Text>
 
-      </ScrollView>
-    </View>
-  );
+          {Object.keys(decks).map(key => {
+            const deck = decks[key];
+
+            return (
+              <DeckCard deck={deck} allowNavigation={true} key={key} />
+            );
+          })}
+
+        </ScrollView>
+      </View>
+    );
+  }
 }
+
+function mapStateToProps(decks) {
+  return {
+    decks
+  };
+}
+
+export default connect(mapStateToProps)(Decks);

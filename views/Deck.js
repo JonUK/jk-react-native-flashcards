@@ -1,31 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { View, Text, TouchableOpacity } from 'react-native';
 import globalStyles from '../utils/globalStyles';
-import data from '../utils/data';
 
 import DeckCard from '../components/DeckCard';
 
-export default function Deck(props) {
+class Deck extends Component {
 
-  const { navigation } = props;
-  const deckId = navigation.getParam('deckId');
-  const deck = data[deckId];
+  render() {
 
-  return (
-    <View style={[globalStyles.viewContainer, { marginTop: 8}]}>
+    const { deck } = this.props;
 
-      <DeckCard deck={deck} allowNavigation={false} />
+    return (
+      <View style={[globalStyles.viewContainer, { marginTop: 8}]}>
 
-      <Text style={globalStyles.title}>Deck</Text>
+        <DeckCard deck={deck} allowNavigation={false} />
 
-      <TouchableOpacity style={globalStyles.btnSecondary}>
-        <Text style={globalStyles.btnSecondaryText}>Add Card</Text>
-      </TouchableOpacity>
+        <Text style={globalStyles.title}>Deck</Text>
 
-      <TouchableOpacity style={globalStyles.btnPrimary}>
-        <Text style={globalStyles.btnPrimaryText}>Start Quiz</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={globalStyles.btnSecondary}>
+          <Text style={globalStyles.btnSecondaryText}>Add Card</Text>
+        </TouchableOpacity>
 
-    </View>
-  );
+        <TouchableOpacity style={globalStyles.btnPrimary}>
+          <Text style={globalStyles.btnPrimaryText}>Start Quiz</Text>
+        </TouchableOpacity>
+
+      </View>
+    );
+  }
 }
+
+function mapStateToProps(decks, { navigation }) {
+  const { deckId } = navigation.state.params;
+
+  return {
+    deckId,
+    deck: decks[deckId]
+  };
+}
+
+export default connect(mapStateToProps)(Deck);
