@@ -9,6 +9,7 @@ import * as Font from 'expo-font';
 import { robotoMedium, robotoRegular } from './utils/fonts';
 import NavigationService from './navigation/navigationService';
 import { fetchAllDecks } from './utils/api';
+import { setLocalNotification } from './utils/notificationHelper';
 
 import StackNavigation from './navigation/StackNavigation';
 
@@ -21,6 +22,8 @@ export default class App extends Component {
   };
 
   async componentDidMount() {
+
+    await setLocalNotification();
 
     const loadDecksPromise = fetchAllDecks();
 
