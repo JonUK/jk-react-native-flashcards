@@ -27,7 +27,14 @@ class Quiz extends Component {
     } else {
       this.setState({ currentQuestionIndex: this.state.currentQuestionIndex + 1 });
     }
+  };
 
+  handleStartQuizAgain = () => {
+    this.setState({
+      currentQuestionIndex: 0,
+      answeredCorrectly: 0,
+      quizComplete: false
+    });
   };
 
   render() {
@@ -51,6 +58,8 @@ class Quiz extends Component {
             ? <QuizResults
                 questionsAnsweredCorrectly={answeredCorrectly}
                 totalQuestions={questions.length}
+                onStartQuizAgain={this.handleStartQuizAgain}
+
               />
             : <Question
                 questionObject={currentQuestionObject}

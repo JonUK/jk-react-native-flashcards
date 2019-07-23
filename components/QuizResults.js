@@ -8,7 +8,7 @@ import NavigationService from '../navigation/navigationService';
 
 function QuizResults(props) {
 
-  const { totalQuestions, questionsAnsweredCorrectly } = props;
+  const { totalQuestions, questionsAnsweredCorrectly, onStartQuizAgain } = props;
   const percentage = Math.round((100 / totalQuestions) * questionsAnsweredCorrectly);
 
   return (
@@ -17,6 +17,12 @@ function QuizResults(props) {
       <Text style={styles.largeText}>
         You got { questionsAnsweredCorrectly } out of { totalQuestions } correct ({ percentage }%)
       </Text>
+
+      <TouchableOpacity
+        onPress={onStartQuizAgain}
+        style={globalStyles.btnSecondary}>
+        <Text style={globalStyles.btnSecondaryText}>Start Quiz Again</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity
         onPress={NavigationService.goBack}
@@ -29,7 +35,8 @@ function QuizResults(props) {
 
 QuizResults.propTypes = {
   totalQuestions: PropTypes.number.isRequired,
-  questionsAnsweredCorrectly: PropTypes.number.isRequired
+  questionsAnsweredCorrectly: PropTypes.number.isRequired,
+  onStartQuizAgain: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
